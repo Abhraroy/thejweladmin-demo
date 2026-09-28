@@ -214,9 +214,20 @@ export default function AdminLoginPage() {
                 value={formData.key}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
-                placeholder={mode === 'login' ? 'Enter admin key' : 'Enter admin key (required for creation)'}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400 text-sm"
+                placeholder='Demo: Use key "jwel-admin-secret-key-2024"'
               />
+              <p className="text-xs text-gray-500">
+                This is demo. Use key:{' '}
+                <button
+                  type="button"
+                  onClick={() => setFormData(prev => ({ ...prev, key: 'jwel-admin-secret-key-2024' }))}
+                  className="font-mono font-medium text-[#360000] underline hover:opacity-80 cursor-pointer"
+                  title="Click to auto-fill demo key"
+                >
+                  jwel-admin-secret-key-2024
+                </button>
+              </p>
             </div>
 
             <button
